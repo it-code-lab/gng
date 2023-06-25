@@ -2939,7 +2939,8 @@ function checkURL() {
                 populateItemList();
             }            
         } else {
-            searchItem(searchItemStr);
+            document.getElementById("searchProductTextId").value = searchItemStr;
+            searchItem();
         }
 
     } else if (pageName == "cart") {
@@ -3165,13 +3166,19 @@ function showMoreItems(category){
 
 }
 
-function searchItem(itemToSearchOrig) {
+function searchItem(event) {
+
+    document.getElementById("homeDivId").style.display = "block";
+    document.getElementById("productDivId").style.display = "none";
+    document.getElementById("contactusDivId").style.display = "none";
+    document.getElementById("howtoDivId").style.display = "none";
+    
     var path = window.location.pathname;
     var myUrl = path.substring(0, path.indexOf('/',path.indexOf('goodsand')) + 1)
 
-    if (itemToSearchOrig == undefined) {
-        itemToSearchOrig = document.getElementById("searchProductTextId").value;
-    }
+
+    var itemToSearchOrig = document.getElementById("searchProductTextId").value;
+    
 
     var itemToSearch = itemToSearchOrig.trim();
 
@@ -3246,11 +3253,17 @@ function searchItem(itemToSearchOrig) {
         }
     }
 
+    //document.getElementById("cardsContainerDivId").style.display = "block";
+    //document.getElementById("productSearchResultsLblDiv").style.display = "block";
+
+    // Prevent the default form submission
+    event.preventDefault();
+
 }
 
-function searchItemEntered() {
+function searchItemEntered(event) {
     if (event.keyCode === 13) {
-        searchItem();
+        searchItem(event);
     }
 }
 
