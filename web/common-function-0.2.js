@@ -1896,7 +1896,7 @@ function showProductForItemId(itemid, loadCanvasFromTemplate) {
 								var canvasSizeFactor = canvaWidth/600 ;
 					
 								canvasFrontString = enlargeCanvasJson(canvasFrontString, canvasSizeFactor);
-							
+							                               
                                 canvas.loadFromJSON(canvasFrontString);
                                 document.getElementById("customItemDiv").style.backgroundColor = backgrcolor;
                             }
@@ -2878,6 +2878,14 @@ function checkURL() {
     } catch {}
 
     if (pageName == "product") {
+
+        if (canvas == undefined) {
+            setTimeout(function() {
+                checkURL();
+            }, 100);
+            return;
+        }
+
         document.getElementById("productDivId").style.display = "block";
         //SM: 
         //document.getElementById('customItemFacing').src="/goodsandgift/img/crew_front.png";
@@ -3172,7 +3180,7 @@ function searchItem(event) {
     document.getElementById("productDivId").style.display = "none";
     document.getElementById("contactusDivId").style.display = "none";
     document.getElementById("howtoDivId").style.display = "none";
-    
+
     var path = window.location.pathname;
     var myUrl = path.substring(0, path.indexOf('/',path.indexOf('goodsand')) + 1)
 
