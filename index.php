@@ -12,12 +12,16 @@ $page_url = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
 
 $path = urldecode($_SERVER["REQUEST_URI"]);
 $path = substr($path, 1);
-
+$isPHPUrl = false;
 $isCrawler = isset($_SERVER['HTTP_USER_AGENT'])
 	&& preg_match('/bot|crawl|slurp|spider|mediapartners|InspectionTool|GoogleOther/i', $_SERVER['HTTP_USER_AGENT']);
 
+
 //if ($isCrawler) {
 	if (strpos($path, 'product/') !== false) {
+
+		$isPHPUrl = true;
+
 		$itemWithId = substr($path, strpos($path, "product/") + 8);
 		$br = explode('-', $itemWithId);
 		$itemid = $br[count($br) - 1];
@@ -66,11 +70,12 @@ $isCrawler = isset($_SERVER['HTTP_USER_AGENT'])
 
 	<!-- Favicon-->
 	<link rel="icon" type="image/x-icon" href="/goodsandgift/assets/gift.ico" />
+	<link rel="canonical" href="https://goodsandgift.com" />
 	<!-- Core theme CSS (includes Bootstrap)
 		 -->
 	<link href="/goodsandgift/css/codescriber-0.2.css" rel="stylesheet" />
 
-	<?php if (!$isCrawler): ?>
+	<?php if (!$isCrawler || !$isPHPUrl ): ?>
 		<?php include 'head-add.html'; ?>
 	<?php endif; ?>
 
@@ -87,7 +92,7 @@ $isCrawler = isset($_SERVER['HTTP_USER_AGENT'])
 </head>
 
 <body>
-	<?php if (!$isCrawler): ?>
+	<?php if (!$isCrawler || !$isPHPUrl): ?>
 		<?php include 'body-main.html'; ?>
 	<?php else: ?>
 		<h1>
