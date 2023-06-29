@@ -715,7 +715,10 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_collapsible
 	z-index: 101;
 	
 }
-
+.iconNname{
+	display: flex;
+	padding: 2px;
+}
 .topnav a {
 	float: left;
 	display: block;
@@ -836,7 +839,8 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_collapsible
 	.menu_text { display: block;
 				 font-size: 14px;
 
-	}		
+	}	
+	.iconNname { flex-direction: column;}	
 }
 @media screen and (max-width: 1200px) {
 	#containerNHelpDivId {
@@ -849,13 +853,15 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_collapsible
 }	
 
 @media screen and (max-width: 700px) {
-	.topNavText{ display: none;}
+	.iconNname { flex-direction: row;}
 	/*
+	.topNavText{ display: none;}
+	
 	
   .topnav a:not(:first-child) {display: none;}
   */
   
-  /*
+  
 	.topnav a {
 		display: none;
 	}
@@ -877,7 +883,7 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_collapsible
 		text-align: left;
 	}
 
-*/
+
 	#helpDisplayDivId {
 		width: 100%;
 	}
@@ -3202,7 +3208,7 @@ input[type=number] {
   }
   form.dummyForm {
 	width: 100%;
-	padding: 10px;
+	/* padding: 10px; */
 	background: transparent;
 	margin: 0px;
   }

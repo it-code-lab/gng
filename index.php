@@ -68,7 +68,7 @@ $isCrawler = isset($_SERVER['HTTP_USER_AGENT'])
 	<link rel="icon" type="image/x-icon" href="/goodsandgift/assets/gift.ico" />
 	<!-- Core theme CSS (includes Bootstrap)
 		 -->
-	<link href="/goodsandgift/css/codescriber-0.1.css" rel="stylesheet" />
+	<link href="/goodsandgift/css/codescriber-0.2.css" rel="stylesheet" />
 
 	<?php if (!$isCrawler): ?>
 		<?php include 'head-add.html'; ?>

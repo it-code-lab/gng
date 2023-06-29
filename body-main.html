@@ -9,15 +9,15 @@
           </a>
           
 
-          <a class="" id="homeLinkId" href="javascript:goToHome()" ><i class="fa fa-home fontSize18" ></i><br><span class="topNavText">HOME</span></a>
-          <a class="" id="productLinkId" href="javascript:Show('product')" ><i class="fa fa-product-hunt fontSize18" ></i><br><span class="topNavText">PRODUCT</span></a>
-           <a class="" id="howtoLinkId" href="javascript:goToHowTo()" ><i class="fa fa-info-circle fontSize18" ></i><br><span class="topNavText">HOW TO</span></a>
-           <a class="" id="contactusLinkId" href="javascript:goToContactUs()" ><i class="fa fa-send-o fontSize18" ></i><br><span class="topNavText">CONTACT US</span></a>
+          <a class="" id="homeLinkId" href="javascript:goToHome()" ><span class="iconNname"><i class="fa fa-home fontSize18" ></i><span class="topNavText">HOME</span></span></a>
+          <a class="" id="productLinkId" href="javascript:Show('product')" ><span class="iconNname"><i class="fa fa-product-hunt fontSize18" ></i><span class="topNavText">PRODUCT</span></span></a>
+           <a class="" id="howtoLinkId" href="javascript:goToHowTo()" ><span class="iconNname"><i class="fa fa-info-circle fontSize18" ></i><span class="topNavText">HOW TO</span></span></a>
+           <a class="" id="contactusLinkId" href="javascript:goToContactUs()" ><span class="iconNname"><i class="fa fa-send-o fontSize18" ></i><span class="topNavText">CONTACT US</span></span></a>
 
 
 
-           <a class="" id="cartLinkId" href="javascript:goToCart()" ><i class="fa fa-shopping-cart fontSize18"  ></i>(<span class="total-count"></span>)<br><span class="topNavText">CART</span></a>
-          <a class="" id="loginLinkId" href="javascript:goToLogin()" ><i class="fa fa-user fontSize18" ></i><br><span class="topNavText">LOG IN</span></a>
+           <a class="" id="cartLinkId" href="javascript:goToCart()" ><span class="iconNname"><span><i class="fa fa-shopping-cart fontSize18"  ></i>(<span class="total-count"></span>)</span><span class="topNavText">CART</span></span></a>
+          <a class="" id="loginLinkId" href="javascript:goToLogin()" ><span class="iconNname"><i class="fa fa-user fontSize18" ></i><span class="topNavText">LOG IN</span></span></a>
 
           
 
@@ -27,7 +27,7 @@
           
           <a style="padding:0px">
              <div id="logoutLinkId" onClick="toggleSubNavContent()" class="subnav hideByDefault">
-                <button id="usremailspanid"  class="subnavbtn"><i class="fa fa-user fontSize18" ></i><i class="fa fa-caret-down"></i><br><span class="topNavText">MY ACCOUNT</span>  </button>
+                <button id="usremailspanid"  class="subnavbtn"><span class="iconNname"><i class="fa fa-user fontSize18" ></i><i class="fa fa-caret-down"></i><span class="topNavText">MY ACCOUNT</span></span>  </button>
 
             </div>
 
@@ -38,11 +38,10 @@
                   <a id="mdaItems" class="hideByDefault"  href="javascript:showMdaItems()">ITEMS</a>
                   <a id="mdaOrders" class="hideByDefault" href="javascript:showMdaOrders()">ORDERS</a>
                   <a id="mdaArts" class="hideByDefault"  href="javascript:getMdaArtList()">ARTS</a>
-                  <a id="mdaMockup" class="hideByDefault"  href="javascript:saveMockUp()">SAVE MOCKUP</a>
-                  
+                  <a id="mdaMockup" class="hideByDefault"  href="javascript:saveMockUp()">SAVE MOCKUP</a>                  
            </div>
 
-           <span class="searchWrapper"><span id="itemsearchDivId">
+           <a class="searchWrapper"><span id="itemsearchDivId">
         <form autocomplete="off" class="dummyForm">
             <input id="searchProductTextId" required type="search"   onkeydown="searchItemEntered(event)" placeholder="Search..">
 
@@ -51,7 +50,7 @@
            </button>	
         </form>
         </span>
-</span>
+    </a>
 
           <!--
           <input class="formInputText" id='searchitem' type="text" autocomplete="off" style="width: 200px; margin: 0px; margin-left: 10px; float:left" readonly onfocus="this.removeAttribute('readonly');" placeholder="Search">
